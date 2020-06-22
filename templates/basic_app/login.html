@@ -1,0 +1,20 @@
+{% extends "basic_app/base.html" %}
+  {% block title_block %}
+    LOGIN
+  {% endblock %}
+  {% block body_block %}
+    <div class="jumbotron">
+      <h1>Please Login or Register!</h1>
+      <button class="btn btn-info" onclick="window.location.href='{% url 'basic_app:register' %}'">Register</button>
+    </div>
+    <form  method="post">
+      {% csrf_token %}
+      <label for="username">Username:</label>
+      <input type="text" name="username" placeholder="Username">
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" placeholder="Password">
+
+      <input type="submit" class="btn btn-primary" value="Login">
+    </form>
+  {% endblock %}
